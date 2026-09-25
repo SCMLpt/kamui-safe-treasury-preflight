@@ -1,0 +1,140 @@
+{
+  "tool": "Kamui Safe Treasury Preflight",
+  "version": "0.1.0",
+  "chainId": "11155111",
+  "source_safe": "0x1111111111111111111111111111111111111111",
+  "snapshot_metadata": null,
+  "batch_sha256": "8f2970226eff8b92dd0f9c301127c1b9015852b88b4097c74a51a1c8d0fd5179",
+  "balances_raw": {
+    "NATIVE": "1000000000000000000",
+    "0x2222222222222222222222222222222222222222": "1000000"
+  },
+  "calls": [
+    {
+      "index": 0,
+      "to": "0x3333333333333333333333333333333333333333",
+      "kind": "native_value",
+      "asset": "NATIVE",
+      "amount_raw": "300000000000000000",
+      "reason": "explicit native-value outflow; recipient side effects unverified"
+    },
+    {
+      "index": 1,
+      "to": "0x4444444444444444444444444444444444444444",
+      "kind": "native_value",
+      "asset": "NATIVE",
+      "amount_raw": "300000000000000000",
+      "reason": "explicit native-value outflow; recipient side effects unverified"
+    },
+    {
+      "index": 2,
+      "to": "0x5555555555555555555555555555555555555555",
+      "kind": "native_value",
+      "asset": "NATIVE",
+      "amount_raw": "300000000000000000",
+      "reason": "explicit native-value outflow; recipient side effects unverified"
+    },
+    {
+      "index": 3,
+      "to": "0x6666666666666666666666666666666666666666",
+      "kind": "unclassified",
+      "asset": null,
+      "amount_raw": null,
+      "reason": "arbitrary or unsupported contract call"
+    }
+  ],
+  "scenario_results": [
+    {
+      "id": "nominal",
+      "funded_prefix": 3,
+      "native_fee_reserve_wei": "10000000000000000",
+      "outflow_multiplier_bps": 10000,
+      "first_blocker": {
+        "index": 3,
+        "reason": "unclassified call"
+      },
+      "known_call_only_requirement_raw": {
+        "NATIVE": "910000000000000000",
+        "0x2222222222222222222222222222222222222222": "0"
+      },
+      "known_call_only_shortfall_raw": {},
+      "trace": [
+        {
+          "index": 0,
+          "required_raw": {
+            "NATIVE": "310000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {}
+        },
+        {
+          "index": 1,
+          "required_raw": {
+            "NATIVE": "610000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {}
+        },
+        {
+          "index": 2,
+          "required_raw": {
+            "NATIVE": "910000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {}
+        }
+      ]
+    },
+    {
+      "id": "higher-outflow-and-fee",
+      "funded_prefix": 2,
+      "native_fee_reserve_wei": "50000000000000000",
+      "outflow_multiplier_bps": 11000,
+      "first_blocker": {
+        "index": 2,
+        "reason": "modeled balance shortfall"
+      },
+      "known_call_only_requirement_raw": {
+        "NATIVE": "1040000000000000000",
+        "0x2222222222222222222222222222222222222222": "0"
+      },
+      "known_call_only_shortfall_raw": {
+        "NATIVE": "40000000000000000"
+      },
+      "trace": [
+        {
+          "index": 0,
+          "required_raw": {
+            "NATIVE": "380000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {}
+        },
+        {
+          "index": 1,
+          "required_raw": {
+            "NATIVE": "710000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {}
+        },
+        {
+          "index": 2,
+          "required_raw": {
+            "NATIVE": "1040000000000000000",
+            "0x2222222222222222222222222222222222222222": "0"
+          },
+          "shortfall_raw": {
+            "NATIVE": "40000000000000000"
+          }
+        }
+      ]
+    }
+  ],
+  "unclassified_indices": [
+    3
+  ],
+  "worst_case_funded_prefix": 2,
+  "all_modeled_calls_funded": false,
+  "scope": "Offline explicit-outflow balance model, not a transaction simulation or execution guarantee. Contract code, token behavior, calldata side effects, Safe gas settlement, current balances, transaction ordering changes and chain state are not verified. Full-batch known-call totals ignore unknown calls and are not a bound on real balance needs."
+}

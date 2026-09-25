@@ -1,0 +1,16 @@
+{
+  "chainId": "11155111",
+  "native_wei": "0",
+  "tokens": {},
+  "snapshot_metadata": {
+    "safe": "0x84a7353d99de26cd31d6638ba74e5aba991f6ca0",
+    "block_number": 11777917,
+    "block_hash": "0x9677df3b4a19335faacb1633602ea6e982f5ca5510091d61775aee256ea6fb63",
+    "account_code_present": true,
+    "safe_interface_checked": true,
+    "safe_threshold": 1,
+    "safe_owner_count": 2,
+    "source": "unverified third-party RPC response; fixed-block read only",
+    "warning": "The Safe-shaped owner/threshold interface does not prove authentic Safe implementation. Token code, RPC honesty and reorg stability are unverified."
+  }
+}
