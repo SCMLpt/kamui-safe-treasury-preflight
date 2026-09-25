@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "chainId": "11155111",
+  "createdAt": 0,
+  "meta": {
+    "name": "Synthetic treasury review",
+    "description": "Invented calls and address; no private key or user funds",
+    "txBuilderVersion": "1.18.0",
+    "createdFromSafeAddress": "0xf8632ece30b284c2f11d62e22ee225ff0cc8f98c",
+    "createdFromOwnerAddress": ""
+  },
+  "transactions": [
+    {
+      "to": "0x3333333333333333333333333333333333333333",
+      "value": "300000000000000000",
+      "data": "0x"
+    },
+    {
+      "to": "0x4444444444444444444444444444444444444444",
+      "value": "300000000000000000",
+      "data": "0x"
+    },
+    {
+      "to": "0x5555555555555555555555555555555555555555",
+      "value": "300000000000000000",
+      "data": "0x"
+    },
+    {
+      "to": "0x6666666666666666666666666666666666666666",
+      "value": "0",
+      "data": "0x1234"
+    }
+  ]
+}

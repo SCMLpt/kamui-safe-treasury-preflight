@@ -1,0 +1,4 @@
+[
+  {"id": "nominal", "native_fee_reserve_wei": "10000000000000000", "outflow_multiplier_bps": 10000},
+  {"id": "higher-outflow-and-fee", "native_fee_reserve_wei": "50000000000000000", "outflow_multiplier_bps": 11000}
+]

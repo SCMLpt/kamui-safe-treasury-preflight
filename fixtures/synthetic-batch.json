@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "chainId": "11155111",
+  "createdAt": 0,
+  "meta": {
+    "name": "Synthetic treasury review",
+    "description": "Invented data; no real account or transaction",
+    "txBuilderVersion": "1.18.0",
+    "createdFromSafeAddress": "0x1111111111111111111111111111111111111111",
+    "createdFromOwnerAddress": ""
+  },
+  "transactions": [
+    {"to": "0x3333333333333333333333333333333333333333", "value": "300000000000000000", "data": "0x"},
+    {"to": "0x4444444444444444444444444444444444444444", "value": "300000000000000000", "data": "0x"},
+    {"to": "0x5555555555555555555555555555555555555555", "value": "300000000000000000", "data": "0x"},
+    {"to": "0x6666666666666666666666666666666666666666", "value": "0", "data": "0x1234"}
+  ]
+}
