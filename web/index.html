@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safe Treasury Preflight — Kamui</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">K</span><span>KAMUI <small>RESEARCH TOOLS</small></span></div>
+    <div class="header-right"><span class="status-dot"></span> LOCAL DEMO <span class="header-sep">/</span> SAFE TREASURY PREFLIGHT <span class="version">V0.2</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">READ-ONLY · OFFLINE ANALYSIS · NO WALLET CONNECTION</div>
+      <h1>Know the buffer<br><em>before</em> the batch.</h1>
+      <p>Model how a Safe Transaction Builder batch survives different outflow and fee assumptions. Review the first balance blocker and every unknown call before anyone signs.</p>
+      <div class="hero-actions"><button id="load-demo" class="button primary">Load synthetic demo <span aria-hidden="true">↗</span></button><span>Invented addresses and balances. No funds move.</span></div>
+    </section>
+
+    <section class="workspace" aria-labelledby="workspace-title">
+      <div class="section-heading"><div><div class="eyebrow">01 / INPUTS</div><h2 id="workspace-title">Build a preflight</h2></div><p>All processing stays on this computer. The optional RPC helper is separate.</p></div>
+      <div class="input-grid">
+        <article class="input-card"><div class="input-card-header"><span class="step">01</span><div><h3>Transaction batch</h3><p>Safe Transaction Builder v1.0 JSON</p></div></div><label for="batch-file" class="file-label">Choose JSON file <span>↗</span></label><input id="batch-file" type="file" accept=".json,application/json"><textarea id="batch" spellcheck="false" aria-label="Transaction batch JSON" placeholder="Paste a Transaction Builder JSON export or load the synthetic demo"></textarea></article>
+        <article class="input-card"><div class="input-card-header"><span class="step">02</span><div><h3>Balance snapshot</h3><p>Native wei and allowlisted token balances</p></div></div><label for="balances-file" class="file-label">Choose JSON file <span>↗</span></label><input id="balances-file" type="file" accept=".json,application/json"><textarea id="balances" spellcheck="false" aria-label="Balance snapshot JSON" placeholder="Paste a manually supplied balance snapshot"></textarea></article>
+        <article class="input-card"><div class="input-card-header"><span class="step">03</span><div><h3>Stress scenarios</h3><p>Outflow multiplier and native fee reserve</p></div></div><label for="scenarios-file" class="file-label">Choose JSON file <span>↗</span></label><input id="scenarios-file" type="file" accept=".json,application/json"><textarea id="scenarios" spellcheck="false" aria-label="Stress scenarios JSON" placeholder="Paste one or more scenario definitions"></textarea></article>
+      </div>
+      <div class="run-row"><div><label for="expected-safe">Expected Safe address <span>(optional cross-check)</span></label><input id="expected-safe" type="text" autocomplete="off" placeholder="0x..." aria-label="Expected Safe address"></div><button id="analyze" class="button dark">Run preflight <span aria-hidden="true">→</span></button></div>
+      <p id="message" role="status" aria-live="polite">Load the demo or provide three JSON inputs to begin.</p>
+    </section>
+
+    <section id="results" class="results hidden" aria-labelledby="results-title">
+      <div class="section-heading"><div><div class="eyebrow">02 / ANALYSIS</div><h2 id="results-title">Capital-buffer frontier</h2></div><button id="download" class="button outline">Download report JSON ↓</button></div>
+      <div class="summary-grid"><div class="metric"><span>WORST-CASE FUNDED PREFIX</span><strong id="worst-prefix">—</strong><small>Recognized calls only</small></div><div class="metric"><span>UNCLASSIFIED CALLS</span><strong id="unknown-count">—</strong><small>Stop the reviewable prefix</small></div><div class="metric"><span>SCENARIOS TESTED</span><strong id="scenario-count">—</strong><small>Explicit user assumptions</small></div></div>
+      <div id="result-warning" class="warning"></div>
+      <div class="panel"><div class="panel-heading"><h3>Scenario outcomes</h3><span>What breaks first?</span></div><div class="table-scroll"><table><thead><tr><th>Scenario</th><th>Outflow stress</th><th>Fee reserve (wei)</th><th>Funded prefix</th><th>First blocker</th></tr></thead><tbody id="scenario-rows"></tbody></table></div></div>
+      <div class="panel"><div class="panel-heading"><h3>Batch call classification</h3><span>Unknown calls remain unknown</span></div><div class="table-scroll"><table><thead><tr><th>#</th><th>Classification</th><th>Asset</th><th>Raw amount</th><th>Reason</th></tr></thead><tbody id="call-rows"></tbody></table></div></div>
+      <div class="report-foot"><span id="batch-hash"></span><span>Not an audit, simulator, or execution guarantee.</span></div>
+    </section>
+  </main>
+
+  <footer><strong>KAMUI / SAFE TREASURY PREFLIGHT</strong><span>Research MVP · 2026 · Read-only by design</span></footer>
+</body>
+</html>
