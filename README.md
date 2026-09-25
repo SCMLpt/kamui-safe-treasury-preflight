@@ -2,7 +2,7 @@
 
 A local, read-only research tool that asks a narrow question before a Safe transaction batch is signed: **under stated balance and fee-shock assumptions, how many consecutive calls have modeled funding in every scenario?** It highlights the first modeled balance blocker and refuses to infer effects for unknown calldata.
 
-This project was developed as an individual student hackathon MVP. Kamui is the project brand; this is not a deployed asset-management service, investment advice, a Safe integration, a security audit, or a transaction-execution guarantee. The synthetic demonstration contains no customer funds or real transaction instructions. Development used AI coding assistance, with human-directed scope and testing.
+This individual student entry uses a core read-only prototype built on September 25, 2026, during the hackathon window. The same core was also prepared that day for a separate Safe grant proposal; this entry adds contest-specific packaging, tests, a captioned demo, and a pitch deck. Kamui is the project brand. This is not a deployed asset-management service, investment advice, a Safe integration, a security audit, or a transaction-execution guarantee. The synthetic demonstration contains no customer funds or real transaction instructions. Development used AI coding assistance, with human-directed scope and testing.
 
 ## Run the browser demo
 
