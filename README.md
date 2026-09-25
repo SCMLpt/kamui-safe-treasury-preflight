@@ -48,3 +48,8 @@ The core analysis is an offline balance model, not Safe Shield or a transaction 
 Built with Python standard library, vanilla JavaScript, HTML, and CSS. No external packages are required to run the tool.
 
 The [46-second captioned walkthrough](media/Safe-Treasury-Preflight-46s-demo.mp4) uses the actual synthetic CLI report; it is not a recording of a live browser or transaction. The four-slide pitch is available as [PDF](media/Safe-Treasury-Preflight-pitch.pdf) and [editable PowerPoint](media/Safe-Treasury-Preflight-pitch.pptx). It explains the problem, model, evidence, and next steps.
+
+
+## License
+
+The software source code, fixtures, tests, and text documentation in this repository are available under the [MIT License](LICENSE). The video, slide deck, and thumbnail in `media/` are provided for viewing with this project; all other rights to those media files are reserved.
